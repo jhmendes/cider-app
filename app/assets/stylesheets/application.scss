@@ -12,4 +12,13 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+ /*= require foundation
+
  */
+
+@import "foundation_and_overrides";
+// uncomment stuff as you go, why is app so slow? supposed to be that much in footer?
+// h1 {
+//   color: $silver !important;
+// }
