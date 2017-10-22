@@ -1,0 +1,2 @@
+class Cider < ApplicationRecord
+end
