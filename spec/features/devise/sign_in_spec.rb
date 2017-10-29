@@ -21,3 +21,77 @@ require 'rspec/rails'
 # pick up here using the devise video.
 # write out the tests and then start installing devise
 # sign up for balsamiq and mock up a design
+
+feature "user signs in" do
+
+ scenario "an existing specifies a valid email and password" do
+
+   user = FactoryGirl.create(:user)
+
+
+   visit root_path
+   click_link 'Sign In'
+   fill_in 'E-Mail', with: user.email
+   fill_in 'Password', with: user.password
+
+   click_button 'Sign In'
+
+
+   expect(page).to have_content("Welcome Back!")
+   expect(page).to have_content("Sign Out")
+
+
+ end
+
+
+ scenario "non-existant user tries to sign in with email and password that doesn't exist in database" do
+   visit root_path
+   click_link 'Sign In'
+   fill_in 'E-Mail', with: 'nobody@example.com'
+   fill_in 'Password', with: 'password'
+   click_button 'Sign In'
+
+   expect(page).to have_content('Invalid Email or password.')
+   expect(page).to_not have_content('Welcome Back!')
+   expect(page).to_not have_content('Sign Out')
+ end
+
+
+  scenario "existing email with wrong password is denied access" do
+       user = FactoryGirl.create(:user)
+
+       visit root_path
+       click_link 'Sign In'
+       fill_in 'E-Mail', with: user.email
+       fill_in 'Password', with: 'wrong password'
+
+       click_button 'Sign In'
+
+       expect(page).to have_content('Invalid Email or password.')
+       expect(page).to_not have_content('Welcome Back!')
+       expect(page).to_not have_content('Sign Out')
+  end
+
+
+
+ scenario "an already authenticated user cannot re-sign in" do
+   user = FactoryGirl.create(:user)
+
+   visit new_user_session_path
+
+   fill_in 'E-Mail', with: user.email
+   fill_in 'Password', with: user.password
+
+   click_button 'Sign In'
+
+
+   expect(page).to have_content("Sign Out")
+   expect(page).to_not have_content("Sign In")
+
+   visit new_user_session_path
+  expect(page).to have_content("You are already signed in.")
+
+ end
+
+
+end
