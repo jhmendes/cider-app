@@ -1,33 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
     <%= stylesheet_link_tag    "application" %>
+
+
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
-
-
   <body>
 
-    <% if user_signed_in? %>
-      <%= link_to "Sign Out", '#' %>
+    <div class="off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+        <nav class="tab-bar">
+          <section class="left-small">
+            <a class="left-off-canvas-toggle menu-icon" href="#">
+              <span></span>
+            </a>
+          </section>
 
-      <% else %>
-      <%= link_to "Sign In", new_user_session_path %>
-      <%= link_to "Sign Up", new_user_registration_path %>
-    <% end %>
+          <section class="middle tab-bar-section">
+            <h1 class="title">Cider App</h1>
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+          </section>
+
+        </nav>
+
+        <aside class="left-off-canvas-menu">
+          <ul class="off-canvas-list">
+
+            <li>
+              <label>Cider App</label>
+            </li>
 
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+          <% if user_signed_in? %>
+            <li><%= link_to "Sign Out", '#' %></li>
+          <% else %>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <% end %>
 
-    <%= yield %>
+            <li>
+              <a href="#">OTHER LINK HERE</a>
+            </li>
+            <li>
+              <a href="#">OTHER LINK HERE</a>
+            </li>
+            <li>
+              <a href="#">OTHER LINK HERE</a>
+            </li>
+            <li><%= link_to "Back to Home", root_path %></li>
+          </ul>
+        </aside>
+
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
+        <section class="main-section">
+
+
+          <%= yield %>
+
+        </section>
+
+        <a class="exit-off-canvas"></a>
+
+      </div>
+    </div>
+
     <%= javascript_include_tag "application" %>
+
+
+
+
   </body>
 </html>

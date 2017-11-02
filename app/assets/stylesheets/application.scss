@@ -10,20 +10,60 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
- *= require foundation_and_overrides
- /*= require foundation
+
+/*= require foundation
+ /*= require foundation_and_overrides
+ /*= require_tree .
+ /*= require_self
 
  */
 
 @import "foundation_and_overrides";
-// uncomment stuff as you go, why is app so slow? supposed to be that much in footer?
-// h1 {
-//   color: $silver !important;
-// }
+
+
+// ****************SITE COLORS AND VARIABLES**************
+// Orange, Green, White, Black, Grey
+$m1 : #FDB119;
+$m2 : #126009;
+$m3 : #fff;
+$m4 : #000;
+$m5 : slategrey;
+
+
+// ****************END SECTION**************
+
+
+
+// ****************BODY STYLING**************
+ body {
+   background-color: $m5;
+
+ h1, h2 {
+   text-align: center;
+ }
+ }
+
+
+// ****************END SECTION**************
+
+// ****************SIGN IN AND SIGN UP STYLING**************
 
 #new_user {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
+
+  label {
+    font-size: 20px;
+    color: $m3;
+
+    abbr[title] {
+      display: none;
+    }
+
+  }
 }
+
+.new_user a {
+    color: $m3;
+}
+// ****************END SECTION**************
