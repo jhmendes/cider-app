@@ -44,6 +44,7 @@ $m5 : slategrey;
  }
 
 
+
 // ****************END SECTION**************
 
 // ****************SIGN IN AND SIGN UP STYLING**************
@@ -66,4 +67,51 @@ $m5 : slategrey;
 .new_user a {
     color: $m3;
 }
+// ****************END SECTION**************
+
+
+// ****************Button Styles**************
+.cider-button {
+  background-color: $m1;
+  width: 50%;
+  -webkit-border-radius:5px;
+   cursor:pointer;
+   -webkit-transition: all 100ms ease;
+   &:hover{
+     background:lighten(#2ECCFA, 20%);
+     margin:6px;
+     padding:18px 32px;
+     -webkit-transition: all 100ms ease;
+   }
+}
+
+.ciderhouse-button {
+  background-color: $m2;
+  width: 50%;
+  -webkit-border-radius:5px;
+   cursor:pointer;
+   -webkit-transition: all 100ms ease;
+   &:hover{
+     background:lighten(#2ECCFA, 20%);
+     margin:6px;
+     padding:18px 32px;
+     -webkit-transition: all 100ms ease;
+   }
+}
+
+
+// ****************END SECTION**************
+
+
+// ****************Grid Section**************
+
+.row {
+  // border-bottom: 1px solid #000;
+  margin-top: 30px;
+}
+
+.large-6 a {
+  text-align: center;
+}
+
 // ****************END SECTION**************
