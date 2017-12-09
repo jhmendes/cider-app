@@ -37,13 +37,20 @@ $m5 : slategrey;
 // ****************BODY STYLING**************
  body {
    background-color: $m5;
+   color: $m3;
 
  h1, h2 {
    text-align: center;
  }
  }
 
+label {
+  color: $m3;
 
+  abbr[title] {
+    display: none;
+  }
+}
 
 // ****************END SECTION**************
 
@@ -52,16 +59,6 @@ $m5 : slategrey;
 #new_user {
   width: 60%;
   margin: 0 auto;
-
-  label {
-    font-size: 20px;
-    color: $m3;
-
-    abbr[title] {
-      display: none;
-    }
-
-  }
 }
 
 .new_user a {

@@ -1,0 +1,8 @@
+<%= simple_form_for @cider do |f| %>
+  <%= f.input :company %>
+  <%= f.input :style %>
+ <%= f.input :abv, label: "ABV %" %>
+  <%= f.input :season, collection: ["Fall", "Spring", "Summer", "Winter", "Year Round"], selected: "Fall" %>
+  <%= f.input :description, as: :text %>
+  <%= f.button :submit %>
+<% end %>
