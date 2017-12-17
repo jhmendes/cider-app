@@ -1,12 +1,13 @@
 
 
 
-<div class="row"> <%= image_tag("1600x295.png") %> </div>
+
+<%= image_tag("1600x295.png") %>
 
 
-<div class="row">
 
-  <div class="large columns">
+  <div class="container">
+
     <h2>Welcome to the Cider App!</h2>
     <p>The purpose of this web application is to be a one stop shop for all
       things Cider.  You'll discover all different brands of Cider as well as the
@@ -15,31 +16,28 @@
       and cider houses.  In case you haven't noticed, Cider is awesome!  Cheers!
 
     </p>
-
-
-
   </div>
 
 
-</div>
+
 <br>
 
 
 
-<div class="row">
+<div>
   <h2>Choose Your Path Below</h2>
 </div>
 
-<div class="row">
-
-  <div class="large-6 columns text-center">
-<a href="/ciders" class="button cider-button">Ciders</a>
+<div class="container">
+  <div class="row align-items-center">
+  <div class="col">
+    <a href="/ciders" class="button cider-button">Ciders</a>
   </div>
 
-  <div class="large-6 columns text-center">
+  <div class="col">
     <a href="#" class="button ciderhouse-button">Cider Houses</a>
   </div>
-
+</div>
 </div>
 
 
