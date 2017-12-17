@@ -15,33 +15,25 @@
  /*= require_self
 
  */
-
-
 @import "bootstrap";
-
 // ****************SITE COLORS AND VARIABLES**************
 // Orange, Green, White, Black, Grey
-$m1 : #FDB119;
-$m2 : #126009;
-$m3 : #fff;
-$m4 : #000;
-$m5 : slategrey;
-
-
+$m1: #FDB119;
+$m2: #126009;
+$m3: #fff;
+$m4: #000;
+$m5: slategrey;
 // ****************END SECTION**************
-
-
-
 // ****************BODY STYLING**************
- body {
-   background-color: $m5;
-   color: $m3;
+body {
+  background-color: $m5;
+  color: $m3;
 
- h1, h2 {
-   text-align: center;
-  
- }
- }
+  h1,
+  h2 {
+    text-align: center;
+  }
+}
 
 label {
   color: $m3;
@@ -51,56 +43,52 @@ label {
   }
 }
 
+footer {
+  text-align: center;
+}
 // ****************END SECTION**************
-
 // ****************SIGN IN AND SIGN UP STYLING**************
-
 #new_user {
   width: 60%;
   margin: 0 auto;
 }
 
 .new_user a {
-    color: $m3;
+  color: $m3;
 }
 // ****************END SECTION**************
-
-
 // ****************Button Styles**************
 .cider-button {
   background-color: $m1;
   width: 50%;
-  -webkit-border-radius:5px;
-   cursor:pointer;
-   -webkit-transition: all 100ms ease;
-   &:hover{
-     background:lighten(#2ECCFA, 20%);
-     margin:6px;
-     padding:18px 32px;
-     -webkit-transition: all 100ms ease;
-   }
+  -webkit-border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: all 100ms ease;
+
+  &:hover {
+    background: lighten(#2ECCFA, 20%);
+    margin: 6px;
+    padding: 18px 32px;
+    -webkit-transition: all 100ms ease;
+  }
 }
 
 .ciderhouse-button {
   background-color: $m2;
   width: 50%;
-  -webkit-border-radius:5px;
-   cursor:pointer;
-   -webkit-transition: all 100ms ease;
-   &:hover{
-     background:lighten(#2ECCFA, 20%);
-     margin:6px;
-     padding:18px 32px;
-     -webkit-transition: all 100ms ease;
-   }
+  -webkit-border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: all 100ms ease;
+
+  &:hover {
+    background: lighten(#2ECCFA, 20%);
+    margin: 6px;
+    padding: 18px 32px;
+    -webkit-transition: all 100ms ease;
+  }
 }
-
-
 // ****************END SECTION**************
-
-
 // ****************Grid Section**************
-
 .row {
   // border-bottom: 1px solid #000;
   margin-top: 30px;
@@ -109,5 +97,4 @@ label {
 .large-6 a {
   text-align: center;
 }
-
 // ****************END SECTION**************

@@ -10,11 +10,11 @@
 
   <body>
 
-    <section>
+    <header>
       <h1 class="title">Cider App!</h1>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-    </section>
+    </header>
 
     <ul>
       <li>
@@ -23,7 +23,7 @@
 
       <% if user_signed_in? %>
       <li><%= link_to "Sign Out", '#' %></li>
-        <% else %>
+    <% else %>
       <li><%= link_to "Sign In", new_user_session_path %></li>
       <li><%= link_to "Sign Up", new_user_registration_path %></li>
       <% end %>
@@ -38,14 +38,15 @@
       <%= image_tag("140x110.png") %>
     </ul>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
     <section class="main-section">
 
       <%= yield %>
 
     </section>
+
+    <footer>
+      John Mendes &copy; 2017
+    </footer>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
