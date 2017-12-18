@@ -11,12 +11,31 @@
   <body>
 
     <header>
-      <h1 class="title">Cider App!</h1>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+
+      <ul class="nav">
+<h1 class="title">Cider App!</h1>
+    <li><%= link_to "Back to Home", root_path, :class => "nav-link" %></li>
+        <li>
+          <a href="/ciders" class="nav-link">Ciders Home</a>
+        </li>
+        <li>
+          <a href="#" class="nav-link">Cider Houses Home</a>
+        </li>
+
+        <% if user_signed_in? %>
+        <li><%= link_to "Sign Out", '#', :class => "nav-link" %></li>
+          <% else %>
+        <li><%= link_to "Sign In", new_user_session_path, :class => "nav-link" %></li>
+        <li><%= link_to "Sign Up", new_user_registration_path, :class => "nav-link" %></li>
+        <% end %>
+      </ul>
+
     </header>
 
-    <ul>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <!-- <ul> THIS WILL BE THE OFF-CANVAS MOBILE NAV
       <li>
         <label>Cider App</label>
       </li>
@@ -36,7 +55,7 @@
       </li>
       <li><%= link_to "Back to Home", root_path %></li>
       <%= image_tag("140x110.png") %>
-    </ul>
+    </ul> -->
 
     <section class="main-section">
 
@@ -44,9 +63,12 @@
 
     </section>
 
+
     <footer>
       John Mendes &copy; 2017
     </footer>
+
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>
